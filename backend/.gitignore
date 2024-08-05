@@ -1,0 +1,10 @@
+__pycache__
+./__pycache__
+
+model/*
+./model/*
+!model/instruction.md
+!./model/instruction.md
+
+database.db
+./database.db
