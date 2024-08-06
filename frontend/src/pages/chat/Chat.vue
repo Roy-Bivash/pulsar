@@ -168,6 +168,9 @@ export default defineComponent({
         }
 
         async function submitPromptForm() {
+            // If a new message is already loading then we don't continue :
+            if(isLoadingNewMessage.value) return;
+
             if(newMessageInputRef.value === "" || !newMessageInputRef.value || newMessageInputRef.value.trim() === ""){
                 setPageLoading(false);
                 console.error("Input error");

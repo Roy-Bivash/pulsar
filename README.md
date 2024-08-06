@@ -1,5 +1,4 @@
 # Local AI
 
-An web interface for an local AI model
+This is a interface that is designed to be used with [Phi-3-mini-4k-instruct](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct) model.
 
-- Put the model in the model folder

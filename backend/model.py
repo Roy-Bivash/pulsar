@@ -1,18 +1,25 @@
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+MODEL_PATH = os.getenv('MODEL_PATH')
+
 
 # Set random seed for reproducibility
 torch.random.manual_seed(0)
 
 # Load the model and tokenizer
 model = AutoModelForCausalLM.from_pretrained(
-    "./model",
+    MODEL_PATH,
     device_map="cuda",
     torch_dtype="auto",
     trust_remote_code=True,
 )
 
-tokenizer = AutoTokenizer.from_pretrained("./model/Phi-3-mini-4k-instruct")
+tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 
 # Create the pipeline for text generation
 pipe = pipeline(
@@ -21,7 +28,7 @@ pipe = pipeline(
     tokenizer=tokenizer,
 )
 
-def generate_text(messages, max_new_tokens=500, temperature=0.0):
+def generate_text(messages, max_new_tokens=500, temperature=0.7):
     generation_args = {
         "max_new_tokens": max_new_tokens,
         "return_full_text": False,
