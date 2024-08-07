@@ -13,13 +13,16 @@ interface errorModalInterface {
 
 const allChats = ref<Array<chat>>([]);
 const errorModal = ref<errorModalInterface>({ show:false, content: "" });
-provide('updateChatList', getAllChat);
+provide('updateChatList', getAllChat); // Gives the other component possibility to update the chat liste using this provider
 
 interface chat {
   id:number,
   name: string
 }
 
+/**
+ * Get a liste of all the existing conversations
+ */
 async function getAllChat() {
   setPageLoading(true);
   const { response, error } = await CustomFetch('/chat', { method: 'GET' });

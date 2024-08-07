@@ -132,6 +132,9 @@ export default defineComponent({
         const updateChatListProvider = inject('updateChatList') as Function;
         const errorModal = ref<errorModalInterface>({ show:false, content: "" });
 
+        /**
+         * Get all the chat infos when the component is mounted
+         */
         onMounted(() => {
             theChatInfos.value.id = route.params.id as string | null;
             if (theChatInfos.value.id) {
@@ -139,6 +142,10 @@ export default defineComponent({
             }
         });
 
+        /**
+         * This watch for changes in the url params.
+         * If the user changes chat, the frontend must get the new chat infos
+         */
         watch(route, (newRoute) => {
             theChatInfos.value.id = newRoute.params.id as string | null;
             if (theChatInfos.value.id) {
@@ -146,6 +153,14 @@ export default defineComponent({
             }
         }, { immediate: true });
 
+
+        /**
+         * This function gets the infos about the selected chat by id :
+         * - Gets the messages of the chat
+         * - Gets informations like the name of the chat, the token limit, temperature
+         * 
+         * @param id : Id of the chat that you want the infos
+         */
         async function getChatInfos(id: string) {
             setPageLoading(true);
             const { response, error } = await CustomFetch(`/messages?chat_id=${id}`, { method: 'GET' });
@@ -167,6 +182,7 @@ export default defineComponent({
             setPageLoading(false);
         }
 
+        
         async function submitPromptForm() {
             // If a new message is already loading then we don't continue :
             if(isLoadingNewMessage.value) return;
