@@ -1,11 +1,14 @@
-# AI Model Application
+# Pulsar
 
-This application allows you to run an AI model locally. The frontend is built with Vue.js and Vite, and the backend is built with Python and Flask. The user can specify the model name in the `./backend/.env` file or provide a path to a locally downloaded model.
+This application allows you to run an AI model locally. 
+
+The frontend is built with Vue.js and Vite, and the backend is built with Python and Flask. \
+The user can specify the model name in the `./backend/.env` file or provide a path to a locally downloaded model.
 
 **Note:** This application has only been tested with the following model:
 [https://huggingface.co/microsoft/Phi-3-mini-4k-instruct](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct)
 
-## Prerequisites
+## Prerequirement
 
 - [Docker](https://www.docker.com/products/docker-desktop) (for Docker setup)
 - [Node.js](https://nodejs.org/en/download/) (for manual frontend setup)
