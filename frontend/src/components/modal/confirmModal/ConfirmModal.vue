@@ -21,11 +21,9 @@ import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
     name: 'ConfirmModal',
-    data() {
-        return{
-
-        }
-    }
+    props: {
+        title: { type: String as PropType<string>, required: true },
+    },
 });
 </script>
 
