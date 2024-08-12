@@ -16,13 +16,10 @@
 </template>
   
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
     name: 'ConfirmModal',
-    props: {
-        title: { type: String as PropType<string>, required: true },
-    },
     data() {
         return{
 
