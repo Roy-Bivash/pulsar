@@ -50,7 +50,6 @@
     </ConfirmModal>
     <ErrorModal
         v-if="errorModal.show"
-        @close="errorModal.show = false"
     >
         {{ errorModal.content }}
   </ErrorModal>
