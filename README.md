@@ -1,6 +1,7 @@
+
 # Pulsar
 
-This application allows you to run an AI model locally. 
+This application allows you to run an AI model locally.
 
 The frontend is built with Vue.js and Vite, and the backend is built with Python and Flask. \
 The user can specify the model name in the `./backend/.env` file or provide a path to a locally downloaded model.
@@ -25,6 +26,14 @@ MODEL_PATH="microsoft/Phi-3-mini-4k-instruct"
 # or
 MODEL_PATH="./model/Phi-3-mini-4k-instruct"
 ```
+
+You can also configure Cross-Origin Resource Sharing (CORS) settings by modifying the `CORS_ORIGINS` variable in the `.env` file:
+
+```env
+CORS_ORIGINS="http://localhost:3000/"
+```
+
+This setting allows you to control which origins are permitted to access the backend API. Adjust the value as needed to match your frontend URL or other origins that require access.
 
 ## Running with Docker
 
@@ -105,6 +114,28 @@ The backend should now be running on port 3001.
 
 - Frontend: Open your web browser and go to `http://localhost:3000`
 - Backend: The backend API is accessible at `http://localhost:3001`
+
+## Screenshots
+
+Here are some screenshots of the application in action:
+
+### Chat Interface
+
+This is a screenshot of the app with an open conversation:
+
+![Chat Interface](images/chat.PNG)
+
+### New Chat Modal
+
+This is the modal where the user can enter the name of the new chat they want to create and add the system prompt:
+
+![New Chat Modal](images/new_chat.PNG)
+
+### Chat Settings
+
+In this section, the user can change the token limit, temperature, and name of the chat. Each chat has its own settings configuration:
+
+![Chat Settings](images/settings.PNG)
 
 ## Notes
 
