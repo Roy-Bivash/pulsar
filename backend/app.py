@@ -3,6 +3,12 @@ from flask_cors import CORS
 from chat import chat_bp
 from message import message_bp
 from database import init_db, close_db
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+CORS_ORIGINS = os.getenv('CORS_ORIGINS')
 
 app = Flask(__name__)
 
@@ -14,7 +20,7 @@ app.register_blueprint(chat_bp)
 app.register_blueprint(message_bp)
 
 # Enable CORS
-cors = CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+cors = CORS(app, resources={r"/*": {"origins": CORS_ORIGINS}})
 
 # Close the database connection after each request
 @app.teardown_appcontext

@@ -5,7 +5,7 @@
             <img class="settings-btn" :src="SettingIcon" v-on:click="settingModal.show = true">
         </div>
         <div id="content">
-            <Message v-for="item in messageHistoryRef" :key="item.id"
+            <Message v-for="(item, index) in messageHistoryRef" :key="item.id ?? index"
                 :role="item.role"
                 :content="item.content"
             />

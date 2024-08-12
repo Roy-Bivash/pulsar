@@ -40,7 +40,7 @@ export default defineComponent({
         },
         wrapCodeSnippets(content: string): string {
             const codeBlockRegex = /```(.*?)```/gs;
-            return content.replace(codeBlockRegex, (match, p1) => {
+            return content.replace(codeBlockRegex, (_match, p1) => {
                 return `<pre><code>${p1}</code></pre>`;
             });
         },
