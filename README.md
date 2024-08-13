@@ -129,7 +129,7 @@ This is a screenshot of the app with an open conversation:
 
 This is the modal where the user can enter the name of the new chat they want to create and add the system prompt:
 
-![New Chat Modal](images/new_chat.PNG)
+![New Chat Modal](images/new_chat_modal.PNG)
 
 ### Chat Settings
 
