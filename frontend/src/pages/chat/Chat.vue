@@ -31,7 +31,7 @@
             <p>Name</p>
             <input v-model="settingModal.name" class="form-input" type="text">
             <p>Token limit</p>
-            <input v-model="settingModal.max_token" class="form-input" type="number" min="10" max="2048" step="1">
+            <input v-model="settingModal.max_token" class="form-input" type="number" min="10" max="128000" step="1">
             <p>Temperature</p>
             <input v-model="settingModal.temperature" class="form-input" type="number" min="0.1" max="1" step="0.1">
             <br>
@@ -244,7 +244,7 @@ export default defineComponent({
                 console.error("Name input error");
                 return errorModal.value = { show: true, content: "Input error : incorrect form input" }
             }
-            if(settingModal.value.max_token < 10 || settingModal.value.max_token > 2048) {
+            if(settingModal.value.max_token < 10 || settingModal.value.max_token > 128000) {
                 setPageLoading(false);
                 console.error("Token limit input error");
                 return errorModal.value = { show: true, content: "Input error : incorrect form input" }
