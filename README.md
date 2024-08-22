@@ -6,9 +6,10 @@ This application allows you to run an AI model locally.
 The frontend is built with Vue.js and Vite, and the backend is built with Python and Flask. \
 The user can specify the model name in the `./backend/.env` file or provide a path to a locally downloaded model.
 
-**Note:** This application has only been tested with the following model:
+**Note:** This application has only been tested with the following models :
 
 - [Phi-3-mini-4k-instruct](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct)
+- [Phi-3-mini-128k-instruct](https://huggingface.co/microsoft/Phi-3-mini-128k-instruct)
 - [Phi-3-small-128k-instruct](https://huggingface.co/microsoft/Phi-3-small-128k-instruct)
 - [Phi-3-medium-128k-instr](https://huggingface.co/microsoft/Phi-3-medium-128k-instruct)
 - [Phi-3.5-mini-instruct](https://huggingface.co/microsoft/Phi-3.5-mini-instruct)
