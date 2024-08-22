@@ -36,7 +36,7 @@
                     placeholder="You are a helpful AI assistant."
                 >
                 <br>
-                <button type="submit" class="btn-prompt-submit">Confirme</button>
+                <button type="submit" class="btn-prompt-submit">Confirm</button>
             </form>
         </Modal>
         <ErrorModal
